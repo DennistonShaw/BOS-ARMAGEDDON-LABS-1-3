@@ -1,0 +1,18 @@
+02 — EDGE PROOF (CLOUDFRONT)
+===========================
+
+STATUS
+------
+NOT APPLICABLE
+
+RATIONALE
+---------
+CloudFront edge caching is not used in this deployment for the storage or processing of regulated data.
+
+This system relies on regional Amazon S3 buckets for object storage, and CloudFront is not configured to cache or persist PHI at edge locations.
+
+As a result, edge cache behavior evidence is not applicable to this architecture.
+
+AUDITOR NOTE
+------------
+This file is intentionally retained to preserve audit pack numbering and control coverage alignment.

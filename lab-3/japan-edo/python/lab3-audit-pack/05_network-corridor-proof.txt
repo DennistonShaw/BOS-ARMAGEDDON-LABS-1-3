@@ -1,0 +1,44 @@
+05 — NETWORK CORRIDOR PROOF (TGW)
+================================
+
+Generated (UTC): 20260204T181735Z
+Regions: Tokyo (ap-northeast-1) ↔ São Paulo (sa-east-1)
+
+REGION: ap-northeast-1
+----------------------------------------------------------------------
+Transit Gateway ID: tgw-0874bcbcc361d50cc
+Attachments:
+  - peering | tgw-0a13b93a9ec3e8720 | State: available
+  - vpc | vpc-0c2f2ae37d2e5cda0 | State: available
+TGW Route Tables (remote CIDRs):
+  - RTB tgw-rtb-03b3ece63a12d1634 routes 10.81.0.0/16 via attachment [{'ResourceId': 'vpc-0c2f2ae37d2e5cda0', 'TransitGatewayAttachmentId': 'tgw-attach-033b91a9d126376b5', 'ResourceType': 'vpc'}]
+VPC Route Tables (remote CIDRs → TGW):
+  - VPC vpc-0c2f2ae37d2e5cda0 RT rtb-0b1c612166a75c27d routes 10.81.0.0/16 to TGW None
+  - VPC vpc-0c2f2ae37d2e5cda0 RT rtb-0a789614628b5ae29 routes 10.81.0.0/16 to TGW None
+  - VPC vpc-0c2f2ae37d2e5cda0 RT rtb-06da76bb7d42d75a1 routes 10.81.0.0/16 to TGW None
+
+REGION: sa-east-1
+----------------------------------------------------------------------
+Transit Gateway ID: tgw-0a13b93a9ec3e8720
+Attachments:
+  - peering | tgw-0874bcbcc361d50cc | State: available
+  - vpc | vpc-0573c841d2fb65546 | State: available
+TGW Route Tables (remote CIDRs):
+  - RTB tgw-rtb-0924eb59c47ad2428 routes 10.55.0.0/16 via attachment [{'ResourceId': 'vpc-0573c841d2fb65546', 'TransitGatewayAttachmentId': 'tgw-attach-036a47f36e4baa2f5', 'ResourceType': 'vpc'}]
+VPC Route Tables (remote CIDRs → TGW):
+  - VPC vpc-0573c841d2fb65546 RT rtb-0648b806d0138f855 routes 10.55.0.0/16 to TGW None
+  - VPC vpc-0573c841d2fb65546 RT rtb-08a8da341502dd6fc routes 10.55.0.0/16 to TGW None
+  - VPC vpc-0573c841d2fb65546 RT rtb-0d2348ec566a5bc46 routes 10.55.0.0/16 to TGW None
+
+COMPLIANCE SUMMARY
+------------------
+- Transit Gateway attachments exist in both regions
+- TGW peering enables controlled cross-region routing
+- Only explicitly defined CIDRs are permitted
+- This forms a restricted, auditable network corridor
+
+AUDITOR NOTES
+-------------
+- This Transit Gateway configuration is intentionally not a full mesh.
+- Cross-region routing is limited to explicitly defined CIDRs required for application-layer communication.
+- No default or wildcard routes exist between regions.
