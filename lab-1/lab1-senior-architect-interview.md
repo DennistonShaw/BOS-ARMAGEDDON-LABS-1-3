@@ -13,9 +13,9 @@ Phase 1 establishes deterministic infrastructure — networking, IAM, routing, a
 
 ## 1. Walk me through your architecture from DNS resolution to database interaction.
 
-```text
 ### Ideal Answer Example:
 
+```text
 When a user accesses the domain, Route 53 resolves 
 DNS and directs traffic to an Application Load Balancer.  
 
