@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
   <diagram name="Lab 1 - Phase 1 (Speech-aligned, clean)" id="G9CFiXDyb1G2CBngqdcv">
-    <mxGraphModel dx="1399" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1189" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -38,16 +38,16 @@
           <mxGeometry height="150" width="249" x="391" y="870" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-45" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontSize=13;" value="Private Subnets (multi-AZ)&#xa;App Tier: EC2&#xa;(no public IP)&#xa;IAM role + SGs" vertex="1">
-          <mxGeometry height="160" width="270" x="716" y="870" as="geometry" />
+          <mxGeometry height="160" width="230" x="736" y="870" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-46" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontSize=13;" value="Private Subnets&#xa;Data Tier: RDS&#xa;DB subnet group&#xa;SG locked to App" vertex="1">
           <mxGeometry height="160" width="241" x="1060" y="870" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-47" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacing=10;fontSize=12;" value="Private AWS Service Access (VPC Endpoints)&lt;br&gt;• S3 (Gateway)&lt;br&gt;• SSM / EC2Messages / SSMMessages&lt;br&gt;• CloudWatch Logs&lt;br&gt;• Secrets Manager&lt;br&gt;• KMS" vertex="1">
-          <mxGeometry height="110" width="320" x="401" y="680" as="geometry" />
+          <mxGeometry height="110" width="299" x="391" y="680" as="geometry" />
         </mxCell>
-        <mxCell id="R3rEFGfjpAE-hpVmMr7g-48" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=12;" value="Control&#xa;• Least-privilege IAM roles&#xa;• SG paths: ALB→App only, App→RDS only" vertex="1">
-          <mxGeometry height="110" width="325" x="976" y="680" as="geometry" />
+        <mxCell id="R3rEFGfjpAE-hpVmMr7g-48" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacing=10;fontSize=12;" value="Control&lt;br&gt;• Least-privilege IAM roles&lt;br&gt;• SG paths: ALB→App only, App→RDS only" vertex="1">
+          <mxGeometry height="110" width="301" x="1000" y="680" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-49" edge="1" parent="1" source="R3rEFGfjpAE-hpVmMr7g-45" style="endArrow=block;html=1;rounded=0;" target="R3rEFGfjpAE-hpVmMr7g-46">
           <mxGeometry relative="1" as="geometry" />

@@ -1,26 +1,26 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
   <diagram name="Lab 1 - Phase 1 (Speech-aligned, clean)" id="G9CFiXDyb1G2CBngqdcv">
-    <mxGraphModel dx="2973" dy="2125" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1399" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-39" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontSize=13;" value="Internet Users" vertex="1">
-          <mxGeometry height="60" width="180" x="755" y="110" as="geometry" />
+          <mxGeometry height="60" width="180" x="761" y="110" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-40" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontSize=13;" value="Route 53 (DNS)&#xa;A/ALIAS record" vertex="1">
-          <mxGeometry height="70" width="210" x="740" y="195" as="geometry" />
+          <mxGeometry height="70" width="210" x="746" y="195" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-43" parent="1" style="swimlane=1;rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;fontSize=14;fontStyle=1;startSize=36;container=0;" value="VPC (Trust Boundary)" vertex="1">
-          <mxGeometry height="830" width="970" x="390" y="310" as="geometry" />
+          <mxGeometry height="830" width="970" x="366" y="310" as="geometry" />
         </mxCell>
-        <mxCell id="R3rEFGfjpAE-hpVmMr7g-52" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=12;" value="Observability + Alerting&#xa;CloudWatch logs/metrics + dashboards&#xa;Alarms: ALB 5XX + RDS health&#xa;SNS notifications (email)" vertex="1">
-          <mxGeometry height="130" width="430" x="390" y="1190" as="geometry" />
+        <mxCell id="R3rEFGfjpAE-hpVmMr7g-52" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacing=10;fontSize=12;" value="Observability + Alerting&lt;br&gt;CloudWatch logs/metrics + dashboards&lt;br&gt;Alarms: ALB 5XX + RDS health&lt;br&gt;SNS notifications (email)" vertex="1">
+          <mxGeometry height="130" width="290" x="391" y="1190" as="geometry" />
         </mxCell>
-        <mxCell id="R3rEFGfjpAE-hpVmMr7g-53" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=12;" value="Logging Storage&#xa;S3 bucket for ALB access logs&#xa;(WAF logging to CloudWatch by default)" vertex="1">
-          <mxGeometry height="130" width="340" x="850" y="1190" as="geometry" />
+        <mxCell id="R3rEFGfjpAE-hpVmMr7g-53" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacing=10;fontSize=12;" value="Logging Storage&lt;br&gt;S3 bucket for ALB access logs&lt;br&gt;(WAF logging to CloudWatch by default)" vertex="1">
+          <mxGeometry height="130" width="280" x="780" y="1190" as="geometry" />
         </mxCell>
-        <mxCell id="R3rEFGfjpAE-hpVmMr7g-54" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=12;" value="Roadmap&#xa;Phase 2: HA + DR&#xa;Phase 3: ASG + Lambda" vertex="1">
-          <mxGeometry height="130" width="140" x="1220" y="1190" as="geometry" />
+        <mxCell id="R3rEFGfjpAE-hpVmMr7g-54" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacing=10;fontSize=12;" value="Roadmap&lt;br&gt;Phase 2: HA + DR&lt;br&gt;Phase 3: ASG + Lambda" vertex="1">
+          <mxGeometry height="130" width="140" x="1161" y="1190" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-55" edge="1" parent="1" source="R3rEFGfjpAE-hpVmMr7g-39" style="endArrow=block;html=1;rounded=0;" target="R3rEFGfjpAE-hpVmMr7g-40">
           <mxGeometry relative="1" as="geometry" />
@@ -35,19 +35,19 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-44" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontSize=13;" value="Public Subnets (multi-AZ)&#xa;IGW&#xa;NAT Gateway + EIP&#xa;(controlled egress)" vertex="1">
-          <mxGeometry height="150" width="260" x="415" y="870" as="geometry" />
+          <mxGeometry height="150" width="249" x="391" y="870" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-45" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontSize=13;" value="Private Subnets (multi-AZ)&#xa;App Tier: EC2&#xa;(no public IP)&#xa;IAM role + SGs" vertex="1">
-          <mxGeometry height="160" width="270" x="710" y="870" as="geometry" />
+          <mxGeometry height="160" width="270" x="716" y="870" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-46" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontSize=13;" value="Private Subnets&#xa;Data Tier: RDS&#xa;DB subnet group&#xa;SG locked to App" vertex="1">
-          <mxGeometry height="160" width="290" x="1035" y="870" as="geometry" />
+          <mxGeometry height="160" width="241" x="1060" y="870" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-47" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=top;spacing=10;fontSize=12;" value="Private AWS Service Access (VPC Endpoints)&lt;br&gt;• S3 (Gateway)&lt;br&gt;• SSM / EC2Messages / SSMMessages&lt;br&gt;• CloudWatch Logs&lt;br&gt;• Secrets Manager&lt;br&gt;• KMS" vertex="1">
-          <mxGeometry height="110" width="320" x="425" y="680" as="geometry" />
+          <mxGeometry height="110" width="320" x="401" y="680" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-48" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=12;" value="Control&#xa;• Least-privilege IAM roles&#xa;• SG paths: ALB→App only, App→RDS only" vertex="1">
-          <mxGeometry height="110" width="325" x="1000" y="680" as="geometry" />
+          <mxGeometry height="110" width="325" x="976" y="680" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-49" edge="1" parent="1" source="R3rEFGfjpAE-hpVmMr7g-45" style="endArrow=block;html=1;rounded=0;" target="R3rEFGfjpAE-hpVmMr7g-46">
           <mxGeometry relative="1" as="geometry" />
@@ -56,16 +56,16 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontSize=13;" value="Target Group&#xa;HTTP:80&#xa;Health checks" vertex="1">
-          <mxGeometry height="80" width="190" x="755" y="580" as="geometry" />
+          <mxGeometry height="80" width="190" x="756" y="580" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontSize=13;" value="Public Ingress&#xa;ALB (public subnets)&#xa;:80 → 301 → :443&#xa;ACM TLS + WAF" vertex="1">
-          <mxGeometry height="120" width="270" x="715" y="400" as="geometry" />
+          <mxGeometry height="120" width="270" x="716" y="400" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-75" parent="1" style="text;whiteSpace=wrap;html=1;" value="Primary Trust Boundary" vertex="1">
-          <mxGeometry height="40" width="160" x="400" y="280" as="geometry" />
+          <mxGeometry height="40" width="160" x="376" y="280" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-76" parent="1" style="text;whiteSpace=wrap;html=1;" value="Single Internet Entry Point" vertex="1">
-          <mxGeometry height="40" width="170" x="690" y="370" as="geometry" />
+          <mxGeometry height="40" width="170" x="666" y="370" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-77" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;Phase 1&lt;/font&gt;" vertex="1">
           <mxGeometry height="30" width="190" x="400" y="110" as="geometry" />
