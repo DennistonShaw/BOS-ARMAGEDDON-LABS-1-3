@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
   <diagram name="Lab 1 - Phase 1 (Speech-aligned, clean)" id="G9CFiXDyb1G2CBngqdcv">
-    <mxGraphModel dx="1189" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2973" dy="2125" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -11,16 +11,16 @@
           <mxGeometry height="70" width="210" x="740" y="195" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-43" parent="1" style="swimlane=1;rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;fontSize=14;fontStyle=1;startSize=36;container=0;" value="VPC (Trust Boundary)" vertex="1">
-          <mxGeometry height="780" width="970" x="390" y="310" as="geometry" />
+          <mxGeometry height="830" width="970" x="390" y="310" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-52" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=12;" value="Observability + Alerting&#xa;CloudWatch logs/metrics + dashboards&#xa;Alarms: ALB 5XX + RDS health&#xa;SNS notifications (email)" vertex="1">
-          <mxGeometry height="130" width="430" x="390" y="1120" as="geometry" />
+          <mxGeometry height="130" width="430" x="390" y="1190" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-53" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=12;" value="Logging Storage&#xa;S3 bucket for ALB access logs&#xa;(WAF logging to CloudWatch by default)" vertex="1">
-          <mxGeometry height="130" width="340" x="850" y="1120" as="geometry" />
+          <mxGeometry height="130" width="340" x="850" y="1190" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-54" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fontSize=12;" value="Roadmap&#xa;Phase 2: HA + DR&#xa;Phase 3: ASG + Lambda" vertex="1">
-          <mxGeometry height="130" width="140" x="1220" y="1120" as="geometry" />
+          <mxGeometry height="130" width="140" x="1220" y="1190" as="geometry" />
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-55" edge="1" parent="1" source="R3rEFGfjpAE-hpVmMr7g-39" style="endArrow=block;html=1;rounded=0;" target="R3rEFGfjpAE-hpVmMr7g-40">
           <mxGeometry relative="1" as="geometry" />
