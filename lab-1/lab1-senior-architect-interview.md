@@ -26,24 +26,22 @@ They want to see:
 This is Phase 1 of a production architecture roadmap.  
 The objective here is to establish a secure, deterministic foundation before introducing elasticity or automation.
 
-Starting from the left, users resolve DNS through Route 53.  
-Route 53 directs traffic to a public Application Load Balancer.
+Starting from the top, users resolve DNS through **Route 53**.  
+Route 53 directs traffic into the primary trust boundary and into a public Application Load Balancer.
 
-The ALB is the only internet-facing component.  
-It redirects HTTP to HTTPS, terminates TLS using an ACM certificate, and has a regional WAF attached to filter malicious traffic before anything reaches the VPC.
+The **ALB** is the only internet-facing component **(Public ingress)**.
+It redirects HTTP to HTTPS, terminates TLS using an ACM certificate, and applies regional WAF inspection before forwarding traffic to the target group.
 
-From the ALB, traffic flows deeper into the private subnets, which acts as the primary trust boundary.
+The **target group** routes requests to EC2 instances running in private subnets (the application tier).
 
-Inside the VPC, the application tier runs on EC2 instances in private subnets.  
-There are no public IPs attached to the application layer.  
-Access is controlled through security groups and IAM roles to enforce least-privilege access.
+Inside the VPC, the **application tier** runs on **EC2 instances** in **private subnets**. There are no public IPs attached to the application layer. Access is controlled through **security groups** and **IAM roles** to enforce **least-privilege** access.
 
-The application tier communicates with the data tier, which is Amazon RDS.  
+The application tier communicates with the **data tier**, which is **Amazon RDS**.  
 RDS also resides in private subnets and only accepts traffic from the application security group.  
 There is no direct database exposure to the internet.
 
-For outbound AWS service communication, NAT exists as a controlled egress path.  
-However, I reduce NAT dependency by using VPC endpoints for S3, SSM, CloudWatch Logs, Secrets Manager, and KMS.  
+For outbound AWS service communication, **NAT** exists as a **controlled egress** path.  
+However, I reduce NAT dependency by using **VPC endpoints** for **S3, SSM, CloudWatch Logs, Secrets Manager, and KMS**.  
 This keeps management, logging, and secrets traffic inside AWS private networking.
 
 Production readiness is built into the foundation.  
