@@ -221,7 +221,7 @@ and would experience downtime during AZ failure.
 In production, I would enable Multi-AZ deployment to 
 allow automatic failover.
 
-This lab prioritizes architectural design over full 
+This phaseprioritizes architectural design over full 
 HA implementation.
 ```
 
@@ -426,7 +426,7 @@ and networking design.”
 
 .
 
-# Lab 1 – Whiteboard Strategy + Interview Bulletproof Upgrade Guide
+# Phase 1 – Whiteboard Strategy + Interview Bulletproof Upgrade Guide
 
 ## Candidate: Dennis  
 ## Role Positioning: Senior Cloud Solutions Architect  
@@ -541,7 +541,7 @@ Time: ~90 seconds.
 
 ---
 
-# PART 2 — If I wanted to upgrade this lab to pro level...
+# PART 2 — If I wanted to upgrade this phaseto pro level...
 
 ---
 
