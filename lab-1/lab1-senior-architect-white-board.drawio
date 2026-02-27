@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
   <diagram name="Lab 1 - Phase 1 (Speech-aligned, clean)" id="G9CFiXDyb1G2CBngqdcv">
-    <mxGraphModel dx="1691" dy="1135" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1099" dy="738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -40,6 +40,9 @@
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-44" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontSize=13;" value="Public Subnets (multi-AZ)&#xa;IGW&#xa;NAT Gateway + EIP&#xa;(controlled egress)" vertex="1">
           <mxGeometry height="160" width="229" x="400" y="920" as="geometry" />
         </mxCell>
+        <mxCell id="HP0IKdUpLYAYKXiRRlJM-1" edge="1" parent="1" source="R3rEFGfjpAE-hpVmMr7g-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.989;entryY=0.251;entryDx=0;entryDy=0;dashed=1;dashPattern=1 4;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryPerimeter=0;" target="R3rEFGfjpAE-hpVmMr7g-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-45" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontSize=13;" value="Private Subnets (multi-AZ)&#xa;App Tier: EC2&#xa;(no public IP)&#xa;IAM role + SGs" vertex="1">
           <mxGeometry height="160" width="230" x="736" y="920" as="geometry" />
         </mxCell>
@@ -61,16 +64,6 @@
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-49" edge="1" parent="1" source="R3rEFGfjpAE-hpVmMr7g-45" style="endArrow=block;html=1;rounded=0;" target="R3rEFGfjpAE-hpVmMr7g-46">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="R3rEFGfjpAE-hpVmMr7g-51" edge="1" parent="1" source="R3rEFGfjpAE-hpVmMr7g-45" style="endArrow=open;dashed=1;html=1;rounded=0;strokeWidth=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.266;exitY=0.009;exitDx=0;exitDy=0;exitPerimeter=0;" target="R3rEFGfjpAE-hpVmMr7g-44">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="797" y="900" />
-              <mxPoint x="700" y="900" />
-              <mxPoint x="572" y="900" />
-            </Array>
-            <mxPoint x="750" y="920" as="sourcePoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="R3rEFGfjpAE-hpVmMr7g-42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fontSize=13;" value="Target Group&#xa;HTTP:80&#xa;Health checks" vertex="1">
           <mxGeometry height="80" width="190" x="756" y="580" as="geometry" />
@@ -95,6 +88,12 @@
         </mxCell>
         <mxCell id="gDmvr6wYd7KsNuF_HMLy-15" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;font&gt;Egress route:&amp;nbsp;&lt;/font&gt;Private RT → NAT (0.0.0.0/0)" vertex="1">
           <mxGeometry height="20" width="240" x="568" y="876" as="geometry" />
+        </mxCell>
+        <mxCell id="HP0IKdUpLYAYKXiRRlJM-2" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashPattern=1 4;" target="gDmvr6wYd7KsNuF_HMLy-15" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="688" y="960" as="sourcePoint" />
+            <mxPoint x="590" y="1100" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
