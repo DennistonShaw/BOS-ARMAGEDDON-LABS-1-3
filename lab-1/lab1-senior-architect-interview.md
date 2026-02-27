@@ -19,34 +19,37 @@ Phase 1 establishes deterministic infrastructure — networking, IAM, routing, a
 - What tradeoffs you consider
 - How you evolve the system
 
-## 60–90 Second Whiteboard Explanation (walk through)
+---
 
-This is Phase 1 of a production architecture roadmap.  
-The objective here is to establish a secure, deterministic foundation before introducing elasticity or automation.
+# Phase 1 - (75-Second Whiteboard Explanation)
 
-Starting from the top, users resolve DNS through **Route 53**.  
-Route 53 directs traffic into the primary trust boundary and into a public Application Load Balancer.
+This is **Phase 1 of a production architecture roadmap**.  
+The objective is to validate a secure, deterministic foundation before introducing elasticity or automation.
 
-The **ALB** is the only internet-facing component **(Public ingress)**.
-It redirects HTTP to HTTPS, terminates TLS using an ACM certificate (AWS Certificate manager), and applies regional WAF inspection before forwarding traffic to the target group.
+Starting at the top, users resolve DNS through **Route 53**, which directs traffic into the primary trust boundary and into a public **Application Load Balancer (ALB)**.
 
-The **target group** routes requests to EC2 instances running in private subnets (the application tier).
+The **ALB** is the only internet-facing component (**Public Ingress**).  
+It redirects HTTP to HTTPS, terminates TLS using **ACM (AWS Certificate Manager)**, applies **WAF inspection**, and forwards traffic to the **Target Group**.
 
-Inside the VPC, the **application tier** runs on **EC2 instances** in **private subnets**. There are no public IPs attached to the application layer. Access is controlled through **security groups** and **IAM roles** to enforce **least-privilege** access.
+The **Target Group** routes traffic to **EC2 instances** in **Private Subnets** (the **Application Tier**).  
+There are no public IPs attached. Access is controlled using **Security Groups** and **IAM roles** to enforce **least-privilege**.
 
-The application tier communicates with the **data tier**, which is **Amazon RDS**.  
-RDS also resides in private subnets and only accepts traffic from the application security group.  
-There is no direct database exposure to the internet.
+The **Application Tier** communicates with the **Data Tier**, which is **Amazon RDS**.  
+RDS resides in private subnets and only accepts traffic from the application security group.  
+There is no direct database exposure.
 
-The floating boxes (endpoints and management contro) represent control-plane mechanisms inside the VPC — **IAM governs identity boundaries**, and **VPC endpoints govern private service connectivity**. For outbound AWS service communication, **NAT** exists as a **controlled egress** path. However, I reduce NAT dependency by using **VPC endpoints** for **S3, SSM, CloudWatch Logs, Secrets Manager, and KMS**. This keeps management, logging, and secrets traffic inside AWS private networking.
+For controlled outbound communication, a **NAT Gateway** provides **controlled egress**.  
+However, NAT dependency is reduced using **VPC Endpoints** for **S3**, **SSM**, **CloudWatch Logs**, **Secrets Manager**, and **KMS**, keeping management and service traffic on private AWS networking.
 
-Production readiness is built into the foundation.  
-CloudWatch handles logging and metrics, alarms monitor ALB 5XX errors and RDS health, and SNS provides alert notifications.
+For operational maturity, **CloudWatch** provides **metrics, logs, and dashboards**.  
+**Alarms** monitor **ALB 5XX errors** and **RDS health**, triggering notifications through **SNS (email alerts)**.
 
-This phase validates networking, IAM trust boundaries, controlled ingress, deterministic traffic flow, and data layer stability.
+Separately, for long-term audit visibility, the ALB delivers **Access Logs to S3**, and **WAF logging** captures blocked traffic for forensic review.
 
-Phase 2 introduces high availability and disaster recovery strategy.  
-Phase 3 introduces elasticity through Auto Scaling Groups and event-driven automation using Lambda.
+Phase 1 validates networking, IAM trust boundaries, controlled ingress, deterministic traffic flow, and data-layer stability.
+
+Phase 2 introduces high availability and disaster recovery.  
+Phase 3 introduces elasticity through **Auto Scaling Groups** and event-driven automation with **Lambda**.
 
 I do not scale uncertainty.  
 I validate the foundation first, then layer resilience, then elasticity.
@@ -66,6 +69,7 @@ TLS enforcement, WAF attachment, and logging. It ensures all internet
 traffic is inspected and routed deterministically before reaching private 
 infrastructure.
 ```
+
 ---
 
 # 2. Why didn’t you put EC2 in public subnets?
@@ -80,6 +84,7 @@ Public subnets expose resources to the internet via route tables. Application
 instances do not require direct inbound internet access. Keeping them private 
 enforces controlled ingress through the ALB and reduces blast radius.
 ```
+
 ---
 
 # 3. Why use NAT if you already have VPC endpoints?
@@ -95,6 +100,7 @@ for outbound internet traffic such as OS updates or external APIs. Endpoints
 reduce NAT dependency but do not eliminate the need for outbound internet 
 entirely.
 ```
+
 ---
 
 # 4. What happens if NAT fails?
@@ -109,6 +115,7 @@ If a single NAT fails, outbound internet traffic from affected subnets fails.
 In production, I would deploy one NAT per AZ and align route tables 
 accordingly to reduce single points of failure.
 ```
+
 ---
 
 # 5. Why is Route 53 outside the VPC?
@@ -123,6 +130,7 @@ Route 53 is a global managed service and part of the AWS control plane. It
 does not reside inside a VPC. It resolves DNS and directs traffic to 
 VPC-based resources.
 ```
+
 ---
 
 # 6. Why is the Target Group separate from the ALB?
@@ -137,6 +145,7 @@ The target group abstracts backend instances and performs health checks.
 It decouples routing rules from compute resources and allows scaling or 
 replacement without reconfiguring listeners.
 ```
+
 ---
 
 # 7. What is your primary trust boundary?
@@ -323,7 +332,7 @@ The data tier consists of Amazon RDS deployed in isolated private subnets within
 
 Private subnets use a default route (0.0.0.0/0) to a NAT Gateway for controlled outbound internet access. However, AWS service access such as S3, SSM, CloudWatch Logs, Secrets Manager, and KMS is handled through VPC endpoints to keep traffic on the AWS private backbone and reduce NAT exposure.
 
-Observability is centralized through CloudWatch metrics and alarms, with SNS notifications for alerting.
+Observability is centralized through **CloudWatch** metrics and alarms, with SNS notifications for alerting.
 
 This design is modular and prepared for Phase 2 enhancements such as Auto Scaling and high-availability improvements.
 
