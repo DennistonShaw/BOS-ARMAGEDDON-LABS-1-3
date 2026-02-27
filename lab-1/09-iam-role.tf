@@ -28,10 +28,10 @@ resource "aws_iam_role_policy_attachment" "bos_ec2_ssm_attach" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
 
-# resource "aws_iam_role_policy_attachment" "bos_ec2_secrets_attach" {
-#   role       = aws_iam_role.bos_ec2_role01.name
-#   policy_arn = "arn:aws:iam::aws:policy/SecretsManagerReadWrite" # TODO: student replaces w/ least privilege
-# }
+resource "aws_iam_role_policy_attachment" "bos_ec2_secrets_attach" {
+  role       = aws_iam_role.bos_ec2_role01.name
+  policy_arn = "arn:aws:iam::aws:policy/SecretsManagerReadWrite" # TODO: student replaces w/ least privilege
+}
 
 # Explanation: CloudWatch logs are the “ship’s black box”—you need them when things explode.
 resource "aws_iam_role_policy_attachment" "bos_ec2_cw_attach" {
