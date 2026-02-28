@@ -46,13 +46,11 @@ For operational maturity, **CloudWatch** provides **metrics, logs, and dashboard
 
 Separately, for long-term audit visibility, the ALB delivers **Access Logs to S3**, and **WAF logging** captures blocked traffic for forensic review.
 
-Phase 1 validates networking, IAM trust boundaries, controlled ingress, deterministic traffic flow, and data-layer stability.
+**Phase 1:** validates networking, IAM trust boundaries, controlled ingress, deterministic traffic flow, and data-layer stability.
+**Phase 2:** introduces high availability and disaster recovery.  
+**Phase 3:** introduces elasticity through **Auto Scaling Groups** and event-driven automation with **Lambda**.
 
-Phase 2 introduces high availability and disaster recovery.  
-Phase 3 introduces elasticity through **Auto Scaling Groups** and event-driven automation with **Lambda**.
-
-I do not scale uncertainty.  
-I validate the foundation first, then layer resilience, then elasticity.
+I do not scale uncertainty. I validate the foundation first, then layer resilience, then elasticity. **Build it, protect it, then let it think**.
 
 ---
 # Whiteboard Q&A
