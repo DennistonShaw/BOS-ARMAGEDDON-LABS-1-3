@@ -476,6 +476,8 @@ paths, and defense in depth through WAF, monitoring, and logging.
 
 ## 1. Why did you use an Application Load Balancer instead of exposing EC2 directly?
 
+**What they’re testing:** Ingress design and security boundary awareness.
+
 ### Strong Answer Example:
 
 ```text
@@ -496,6 +498,8 @@ and tightly couple compute to public ingress.
 
 ## 2. Why are EC2 and RDS deployed in private subnets?
 
+**What they’re testing:** Network isolation and attack surface reduction.
+
 ### Strong Answer Example:
 
 ```text
@@ -514,6 +518,8 @@ exposure principles.
 ---
 
 ## 3. Explain your VPC and subnet design.
+
+**What they're testing:** Network segmentation and routing clarity.
 
 ### Strong Answer Example:
 
@@ -539,6 +545,8 @@ inbound exposure.
 
 ## 4. What would break if the NAT Gateway failed?
 
+**What they’re testing:** Failure domain awareness and dependency mapping.
+
 ### Strong Answer Example:
 
 ```text
@@ -559,6 +567,8 @@ Inbound traffic from the ALB would still function.
 ---
 
 ## 5. How does the EC2 instance securely retrieve database credentials?
+
+**What they’re testing:** Secret management and IAM integration depth.
 
 ### Strong Answer Example:
 ```text
@@ -582,6 +592,8 @@ credential leakage.
 
 ## 6. Explain the IAM trust relationship used in your design.
 
+**What they’re testing:** IAM fundamentals and least-privilege implementation.
+
 ### Strong Answer Example:
 
 ```text
@@ -598,6 +610,8 @@ ARNs rather than wildcard access.
 ---
 
 ## 7. Why did you choose RDS instead of self-managed MySQL on EC2?
+
+**What they’re testing:** Managed service tradeoff reasoning and operational maturity.
 
 ### Strong Answer Example:
 
@@ -618,6 +632,8 @@ complexity and risk.
 
 ## 8. How is the database protected from direct access?
 
+**What they’re testing:** Database isolation and network security enforcement.
+
 ### Strong Answer Example:
 
 ```text
@@ -633,6 +649,8 @@ There is no route from the internet to the RDS subnet.
 ---
 
 ## 9. Is this database highly available?
+
+**What they’re testing:** High availability awareness and design tradeoff reasoning.
 
 ### Strong Answer Example:
 
@@ -650,6 +668,8 @@ HA implementation.
 ---
 
 ## 10. What monitoring mechanisms are implemented?
+
+**What they’re testing:** Observability strategy and operational readiness.
 
 ### Strong Answer Example:
 
@@ -671,6 +691,8 @@ alerting.
 
 ## 11. How does the alarm-to-notification flow work?
 
+**What they’re testing:** Event-driven monitoring flow and service integration understanding.
+
 ### Strong Answer Example:
 
 ```text
@@ -685,6 +707,8 @@ Subscribers receive notifications for operational response.
 ---
 
 ## 12. What security layers protect your system?
+
+**What they’re testing:** Defense-in-depth awareness and layered security reasoning.
 
 ### Strong Answer Example:
 
@@ -706,6 +730,8 @@ Each layer reduces exposure and enforces segmentation.
 
 ## 13. What is the biggest scalability limitation in this architecture?
 
+**What they’re testing:** Scalability bottleneck identification and growth planning.
+
 ### Strong Answer Example:
 
 ```text
@@ -720,6 +746,8 @@ In production, I would implement an ASG across multiple AZs.
 ---
 
 ## 14. How would you redesign this for 10x traffic growth?
+
+**What they’re testing:** Scalability strategy and architectural evolution thinking.
 
 ### Strong Answer Example:
 
@@ -738,6 +766,8 @@ of single points of failure.
 
 ## 15. What is likely the most expensive component?
 
+**What they’re testing:** Cost awareness and cloud economics understanding.
+
 ### Strong Answer Example:
 
 ```text
@@ -754,6 +784,8 @@ architecture.
 
 ## 16. How would you reduce cost responsibly?
 
+**What they’re testing:** Cost optimization strategy balanced with reliability and security.
+
 ### Strong Answer Example:
 
 ```text
@@ -769,6 +801,8 @@ Cost optimization must not compromise security or reliability.
 ---
 
 ## 17. Is this production-ready?
+
+**What they’re testing:** Architectural maturity and recognition of gaps between lab and production.
 
 ### Strong Answer Example:
 
