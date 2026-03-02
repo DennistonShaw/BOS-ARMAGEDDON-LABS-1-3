@@ -1,14 +1,14 @@
-# Phase 1 – Senior Cloud Solutions Architect Interview Script with 2 approaches: a Whiteboard walkthrough and an Exectutive Architectrue walkthrough
+# Phase 1 – Senior Cloud Solutions Architect Interview Script with 3 approaches: a Whiteboard walkthrough and 2 Exectutive Architectrue walkthroughs, each followed by several questions a recruiter or potential employer may ask.
 
 ### Candidate: Dennis
 ### Role Positioning: Senior Cloud Solutions Architect
 ### Deployment Method: Terraform (Infrastructure as Code)
 ### Architecture Style: Secure 3-Tier AWS Architecture:
 
-Phase 1 establishes deterministic infrastructure — networking, IAM, routing, and data stability. Elasticity and automation are layered in later phases once the foundation is validated.
+Phase 1: establishes deterministic infrastructure — networking, IAM, routing, and data stability. Elasticity and automation are layered in later phases once the foundation is validated. **Deterministic architecture means** every part of the system behaves predictably, ensuring consistent and repeatable outcomes.
 
 ---
-# Section 1: Phase 1 Architecture – Whiteboard walkthrough
+# WALKTHROUGH 1: Phase 1 Architecture – Whiteboard walkthrough
 
 
 ![whiteboard](./screen-captures/lab1-senior-architect-white-board.drawio.png)
@@ -215,8 +215,7 @@ Edge vs regional architecture decisions.
 ### Strong Answer Example:
 
 ```text
-In this design, ALB is the internet entry point, so WAF is attached 
-regionally. If CloudFront were introduced later, WAF would move to the edge 
+In this design, ALB is the internet entry point, so WAF is attached regionally. If CloudFront were introduced later, WAF would move to the edge 
 for earlier traffic filtering.
 ```
 
@@ -245,9 +244,10 @@ Appropriateness of serverless.
 ### Strong Answer Example:
 
 ```text
-Lambda is well-suited for event-driven workloads. This design assumes persistent processes and stable database connections. Introducing Lambda prematurely would 
-add cold start and concurrency considerations without solving a defined 
-constraint.
+Lambda is well-suited for event-driven workloads. This design assumes 
+persistent processes and stable database connections. Introducing Lambda 
+prematurely would add cold start and concurrency considerations without 
+solving a defined constraint.
 ```
 
 ---
@@ -260,9 +260,9 @@ Deep AWS understanding.
 ### Strong Answer Example:
 
 ```text
-IAM enforcement occurs at the AWS control plane when a service makes an API 
-call. EC2 instances assume IAM roles, and AWS evaluates the attached policies
-before allowing access.
+IAM enforcement occurs at the AWS service endpoint when it receives 
+a signed API call. The service evaluates the caller’s IAM identity 
+and attached policies before allowing access.
 ```
 
 ---
@@ -302,21 +302,13 @@ baseline validation.
 **I do not scale uncertainty. I validate networking, trust boundaries, traffic flow, and data stability first. Resilience and elasticity are layered after the foundation is proven stable.**
 
 ---
-
-.
-
-.
-
-.
-
-.
-
-.
-########################################################
-########################################################
-# Section 2: Phase 1 Architecture Walkthrough  
-
 ---
+########################################################
+########################################################
+
+# WALKTHROUGH 2: Phase 1 Architecture Walkthrough  
+![whiteboard](./screen-captures/lab1-senior-architect-white-board.drawio.png)
+
 
 # 60-Second Executive Walkthrough Script
 
@@ -434,21 +426,13 @@ Gateways and an Auto Scaling Group for the application layer.
 
 ---
 
-.
-
-.
-
-.
-
-.
-
-
-
 ---
 
 ########################################################
 ########################################################
-# SECTION 3 — Executive Architecture Walkthrough
+
+# WALKTHROUGH 3 — Executive Architecture Walkthrough
+![whiteboard](./screen-captures/lab1-senior-architect-white-board.drawio.png)
 
 ## Walk me through your architecture from DNS resolution to database interaction.
 
