@@ -29,7 +29,7 @@ The objective is to validate a secure, deterministic foundation before introduci
 Starting at the top, users resolve DNS through **Route 53**, which directs traffic into the primary trust boundary and into a public **Application Load Balancer (ALB)**.
 
 The **ALB** is the only internet-facing component (**Public Ingress**).  
-It redirects HTTP to HTTPS, terminates TLS using **ACM (AWS Certificate Manager)**, applies **WAF inspection**, and forwards traffic to the **Target Group**.
+It redirects **HTTP** to HTTPS, terminates TLS using **ACM (AWS Certificate Manager)**, applies **WAF inspection**, and forwards traffic to the **Target Group**.
 
 The **Target Group** routes traffic to **EC2 instances** in **Private Subnets** (the **Application Tier**).  
 There are no public IPs attached. Access is controlled using **Security Groups** and **IAM roles** to enforce **least-privilege**.
