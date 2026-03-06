@@ -1,4 +1,4 @@
-# Phase 1 – Senior Cloud Solutions Architect Interview Script with 3 approaches: a Whiteboard walkthrough and 2 Exectutive Architectrue walkthroughs, each followed by several questions a recruiter or potential employer may ask.
+# Phase 1 – Senior Cloud Solutions Architect Interview Script with 3 approaches: a Whiteboard walkthrough and 2 Executive Architectrue walkthroughs, each followed by several questions a recruiter or potential employer may ask.
 
 ### Candidate: Dennis
 ### Role Positioning: Senior Cloud Solutions Architect
@@ -856,3 +856,5 @@ configuration, and executing the infrastructure deployment.
 ensured the final implementation matched the intended security
 and networking design.”
 ```
+
+---
